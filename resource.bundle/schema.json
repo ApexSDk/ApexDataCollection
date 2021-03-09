@@ -1,0 +1,896 @@
+{
+    "type": "array",
+    "name": "bulk",
+    "items": [
+        {"type":"record", "name":"web", "namespace":"web", "fields":[{"name":"common_web", "type":"string"}]},
+        {"type":"record", "name":"android", "namespace":"android", "fields":[{"name":"common_android", "type":"string"}]},
+        {
+        "type": "record",
+        "name": "ios",
+        "namespace": "ios",
+        "fields": [{
+            "name": "common",
+            "type": {
+                "name": "common_record",
+                "type": "record",
+                "fields": [{
+                    "name": "message_id",
+                    "type": "string"
+                }, {
+                    "name": "project_id",
+                    "type": "string"
+                }, {
+                    "name": "app_id",
+                    "type": "string"
+                }, {
+                    "name": "tenant_id",
+                    "type": "string"
+                }, {
+                    "name": "upload_time",
+                    "type": "string"
+                }, {
+                    "name": "Apex_id",
+                    "type": "string"
+                }, {
+                    "name": "session_id",
+                    "type": "string"
+                }, {
+                    "name": "app_version",
+                    "type": "string"
+                }, {
+                    "name": "app_package_id",
+                    "type": "string"
+                }, {
+                    "name": "carrier",
+                    "type": "string"
+                },{
+                    "name": "mini_program_scene",
+                    "type": ["null","string"],
+                    "default":null
+                },{
+                    "name": "sdk_info",
+                    "type": {
+                        "type": "record",
+                        "name": "sdk_info_record",
+                        "fields": [{
+                            "name": "sdk_version",
+                            "type": "string"
+                        }, {
+                            "name": "sdk_type",
+                            "type": "string"
+                        }]
+                    }
+                }, {
+                    "name": "device_info",
+                    "type": {
+                        "type": "record",
+                        "name": "device_info_record",
+                        "fields": [{
+                            "name": "device_id",
+                            "type": "string"
+                        }, {
+                            "name": "device_model",
+                            "type": "string"
+                        }, {
+                            "name": "device_brand",
+                            "type": "string"
+                        }, {
+                            "name": "device_type",
+                            "type": "string"
+                        }, {
+                            "name": "device_uuid",
+                            "type": "string"
+                        }, {
+                            "name": "android_id",
+                            "type": "string"
+                        }, {
+                            "name": "imei",
+                            "type": "string"
+                        }, {
+                            "name": "mac",
+                            "type": "string"
+                        }, {
+                            "name": "user_agent",
+                            "type": "string"
+                        }, {
+                            "name": "idfa",
+                            "type": "string"
+                        }, {
+                            "name": "idfv",
+                            "type": "string"
+                        }, {
+                            "name": "oaid",
+                            "type": "string"
+                        }]
+                    }
+                }, {
+                    "name": "screen",
+                    "type": {
+                        "type": "record",
+                        "name": "screen_record",
+                        "fields": [{
+                            "name": "screen_height",
+                            "type": "string"
+                        }, {
+                            "name": "screen_width",
+                            "type": "string"
+                        }]
+                    }
+                }, {
+                    "name": "os",
+                    "type": {
+                        "type": "record",
+                        "name": "os_record",
+                        "fields": [{
+                            "name": "os_system",
+                            "type": "string"
+                        }, {
+                            "name": "os_version",
+                            "type": "string"
+                        }]
+                    }
+                }, {
+                    "name": "browser",
+                    "type": ["null", {
+                        "type": "record",
+                        "name": "browser_record",
+                        "fields": [{
+                            "name": "browser_type",
+                            "type": "string"
+                        }, {
+                            "name": "browser_version",
+                            "type": "string"
+                        }]
+                    }],
+                    "default":null
+                },{
+                    "name": "wechat",
+                    "type": ["null",{
+                        "type": "record",
+                        "name": "wechat_record",
+                        "fields": [{
+                            "name": "wechat_open_id",
+                            "type": "string"
+                        }, {
+                            "name": "wechat_union_id",
+                            "type": "string"
+                        }]
+                    }],
+                    "default":null
+                },{
+                    "name": "referrer_info",
+                    "type": ["null",{
+                        "type": "record",
+                        "name": "referrer_info_record",
+                        "fields": [{
+                            "name": "referrer_url",
+                            "type": "string"
+                        }, {
+                            "name": "referrer_host",
+                            "type": "string"
+                        }]
+                    }],
+                    "default":null
+                }, {
+                    "name": "market_name",
+                    "type": "string"
+                }, {
+                    "name": "utm_info",
+                    "type": ["null",{
+                        "type": "record",
+                        "name": "utm_info_record",
+                        "fields": [{
+                            "name": "utm_matching_type",
+                            "type": "string"
+                        }, {
+                            "name": "utm_source",
+                            "type": "string"
+                        }, {
+                            "name": "utm_medium",
+                            "type": "string"
+                        }, {
+                            "name": "utm_term",
+                            "type": "string"
+                        }, {
+                            "name": "utm_content",
+                            "type": "string"
+                        }, {
+                            "name": "utm_campaign",
+                            "type": "string"
+                        }]
+                    }],
+                    "default":null
+                }]
+            }
+        }, {
+            "name": "events",
+            "type": {
+                "type": "array",
+                "name": "events_item",
+                "items": [{
+                    "name": "click",
+                    "type": "record",
+                    "fields": [{
+                        "name": "click",
+                        "type": "string"
+                    },{
+                        "name": "event_code",
+                        "type": "string"
+                    }, {
+                        "name": "event_name",
+                        "type": "string"
+                    }, {
+                        "name": "event_type",
+                        "type": "string"
+                    }, {
+                        "name": "send_type",
+                        "type": "string"
+                    }, {
+                        "name": "page_type",
+                        "type": "string"
+                    }, {
+                        "name": "ts",
+                        "type": "string"
+                    }, {
+                        "name": "network_type",
+                        "type": "string"
+                    }, {
+                        "name": "time_since_last_operation",
+                        "type": ["null","string"],
+                        "default":null
+                    }, {
+                        "name": "browse_time",
+                        "type": ["null","string"],
+                        "default":null
+                    }, {
+                        "name": "location_info",
+                        "type": {
+                            "type": "record",
+                            "name": "location_info_record6",
+                            "fields": [{
+                                "name": "ip",
+                                "type": "string"
+                            }]
+                        }
+                    },{
+                        "name": "business_info",
+                        "type": ["null",{
+                            "type": "record",
+                            "name": "business_info1",
+                            "fields": [{
+                                "name": "user_id",
+                                "type": ["null","string"],
+                                "default":null
+                            }, {
+                                "name": "extentions",
+                                "type":["null", {
+                                    "type": "map",
+                                    "values": "string"
+                                }],
+                                "default":null
+                            }]
+                        }],
+                        "default":null
+                    }, {
+                        "name": "page_info",
+                        "type": {
+                            "type": "record",
+                            "name": "page_info_record1",
+                            "fields": [{
+                                "name": "current_page_id",
+                                "type": ["null","string"],
+                                "default":null
+                            }, {
+                                "name": "current_page_name",
+                                "type": ["null","string"],
+                                "default":null
+                            }, {
+                                "name": "current_page_url",
+                                "type": ["null","string"],
+                                "default":null
+                            }, {
+                                "name": "current_page_host",
+                                "type": ["null","string"],
+                                "default":null
+                            }, {
+                                "name": "current_page_query",
+                                "type": ["null","string"],
+                                "default":null
+                            }, {
+                                "name": "current_page_path",
+                                "type": "string"
+                            }, {
+                                "name": "source_page_id",
+                                "type": ["null","string"],
+                                "default":null
+                            }, {
+                                "name": "source_page_name",
+                                "type": ["null","string"],
+                                "default":null
+                            }, {
+                                "name": "source_page_url",
+                                "type": ["null","string"],
+                                "default":null
+                            }, {
+                                "name": "source_page_host",
+                               "type": ["null","string"],
+                                "default":null
+                            }, {
+                                "name": "source_page_query",
+                                "type": ["null","string"],
+                                "default":null
+                            }, {
+                                "name": "source_page_path",
+                                "type": "string"
+                            }]
+                        }
+                    }, {
+                        "name": "coordinate_info",
+                        "type":["null", {
+                            "type": "record",
+                            "name": "coordinate_info_record1",
+                            "fields": [{
+                                "name": "page_X",
+                                "type": "string"
+                            }, {
+                                "name": "page_Y",
+                                "type": "string"
+                            }, {
+                                "name": "client_X",
+                                "type": "string"
+                            }, {
+                                "name": "client_Y",
+                                "type": "string"
+                            }]
+                        }],
+                        "default":null
+                    },
+                    {
+                        "name":"element_info",
+                        "type":["null",{
+                            "type":"record",
+                            "name":"element_info_record1",
+                            "fields":[{
+                                "name": "element_id",
+                                "type": ["null","string"],
+                                "default":null
+                            },{
+                               "name": "element_name",
+                                "type": ["null","string"],
+                                "default":null
+                            },
+                            {
+                               "name": "element_target_url",
+                                "type": ["null","string"],
+                                "default":null
+                            },{
+                               "name": "element_type",
+                                "type": ["null","string"],
+                                "default":null
+                            },{
+                               "name": "element_content",
+                                "type": ["null","string"],
+                                "default":null
+                            },{
+                               "name": "element_selector",
+                                "type": ["null","string"],
+                                "default":null
+                            },{
+                               "name": "element_position",
+                                "type": ["null","string"],
+                                "default":null
+                            },{
+                               "name": "element_index",
+                                "type": ["null","string"],
+                                "default":null
+                            },{
+                               "name": "element_tag_name",
+                                "type": ["null","string"],
+                                "default":null
+                            },{
+                               "name": "element_class",
+                                "type": ["null","string"],
+                                "default":null
+                            },{
+                               "name": "element_path",
+                                "type": ["null","string"],
+                                "default":null
+                            }]
+                        }],
+                        "default":null
+                    },
+                    {
+                        "name": "size_info",
+                        "type": ["null",{
+                            "type": "record",
+                            "name": "size_info_record1",
+                            "fields": [{
+                                "name": "visible_window_width",
+                                "type": "string"
+                            }, {
+                                "name": "visible_window_height",
+                                "type": "string"
+                            }, {
+                                "name": "page_width",
+                                "type": "string"
+                            }, {
+                                "name": "page_height",
+                                "type": "string"
+                            }]
+                        }],
+                        "default":null
+                    },{
+                        "name": "event_code_md5",
+                        "type": "string"
+                    }]
+                }, {
+                    "name": "view_page",
+                    "type": "record",
+                    "fields": [{
+                        "name": "view_page",
+                        "type": "string"
+                    },{
+                        "name": "event_code",
+                        "type": "string"
+                    }, {
+                        "name": "event_name",
+                        "type": "string"
+                    }, {
+                        "name": "event_type",
+                        "type": "string"
+                    }, {
+                        "name": "send_type",
+                        "type": "string"
+                    }, {
+                        "name": "page_type",
+                        "type": "string"
+                    }, {
+                        "name": "ts",
+                        "type": "string"
+                    }, {
+                        "name": "network_type",
+                        "type": "string"
+                    }, {
+                        "name": "time_since_last_operation",
+                        "type": ["null","string"],
+                        "default":null
+                    }, {
+                        "name": "browse_time",
+                        "type": "string"
+                    }, {
+                        "name": "business_info",
+                        "type": ["null",{
+                            "type": "record",
+                            "name": "business_info2",
+                            "fields": [{
+                                "name": "user_id",
+                               "type": ["null","string"],
+                                "default":null
+                            }, {
+                                "name": "extentions",
+                                "type": ["null",{
+                                    "type": "map",
+                                    "values": "string"
+                                }],
+                                "default":null
+                            }]
+                        }],
+                        "default":null
+                    },{
+                        "name": "page_info",
+                        "type": {
+                            "type": "record",
+                            "name": "page_info_record2",
+                            "fields": [{
+                                "name": "current_page_id",
+                                "type": ["null","string"],
+                                "default":null
+                            }, {
+                                "name": "current_page_name",
+                                "type": ["null","string"],
+                                "default":null
+                            }, {
+                                "name": "current_page_url",
+                                "type": ["null","string"],
+                                "default":null
+                            }, {
+                                "name": "current_page_host",
+                                "type": ["null","string"],
+                                "default":null
+                            }, {
+                                "name": "current_page_query",
+                                "type": ["null","string"],
+                                "default":null
+                            }, {
+                                "name": "current_page_path",
+                                "type": "string"
+                            }, {
+                                "name": "source_page_id",
+                                "type": ["null","string"],
+                                "default":null
+                            }, {
+                                "name": "source_page_name",
+                                "type": ["null","string"],
+                                "default":null
+                            }, {
+                                "name": "source_page_url",
+                                "type": ["null","string"],
+                                "default":null
+                            }, {
+                                "name": "source_page_host",
+                                "type": ["null","string"],
+                                "default":null
+                            }, {
+                                "name": "source_page_query",
+                                "type": ["null","string"],
+                                "default":null
+                            }, {
+                                "name": "source_page_path",
+                                "type": "string"
+                            }]
+                        }
+                    }, {
+                        "name": "location_info",
+                        "type": {
+                            "type": "record",
+                            "name": "location_info_record1",
+                            "fields": [{
+                                "name": "ip",
+                                "type": "string"
+                            }]
+                        }
+                    },{
+                        "name": "coordinate_info",
+                        "type": ["null",{
+                            "type": "record",
+                            "name": "coordinate_info_record2",
+                            "fields": [{
+                                "name": "page_X",
+                                "type": "string"
+                            }, {
+                                "name": "page_Y",
+                                "type": "string"
+                            }, {
+                                "name": "client_X",
+                                "type": "string"
+                            }, {
+                                "name": "client_Y",
+                                "type": "string"
+                            }]
+                        }],
+                        "default":null
+                    }, {
+                        "name": "size_info",
+                        "type": ["null",{
+                            "type": "record",
+                            "name": "size_info_record2",
+                            "fields": [{
+                                "name": "visible_window_width",
+                                "type": "string"
+                            }, {
+                                "name": "visible_window_height",
+                                "type": "string"
+                            }, {
+                                "name": "page_width",
+                                "type": "string"
+                            }, {
+                                "name": "page_height",
+                                "type": "string"
+                            }]
+                        }],
+                        "default":null
+                    },{
+                        "name": "event_code_md5",
+                        "type": "string"
+                    }]
+                }, {
+                    "name": "custom",
+                    "type": "record",
+                    "fields": [{
+                        "name": "custom",
+                        "type": "string"
+                    },{
+                        "name": "event_code",
+                        "type": "string"
+                    }, {
+                        "name": "event_name",
+                        "type": "string"
+                    }, {
+                        "name": "event_type",
+                        "type": "string"
+                    }, {
+                        "name": "send_type",
+                        "type": "string"
+                    }, {
+                        "name": "page_type",
+                        "type": "string"
+                    }, {
+                        "name": "ts",
+                        "type": "string"
+                    }, {
+                        "name": "network_type",
+                        "type": "string"
+                    }, {
+                        "name": "time_since_last_operation",
+                        "type": ["null","string"],
+                        "default":null
+                    }, {
+                        "name": "browse_time",
+                        "type": ["null","string"],
+                        "default":null
+                    }, {
+                        "name": "location_info",
+                        "type": {
+                            "type": "record",
+                            "name": "location_info_record5",
+                            "fields": [{
+                                "name": "ip",
+                                "type": "string"
+                            }]
+                        }
+                    },{
+                        "name": "business_info",
+                        "type": ["null",{
+                            "type": "record",
+                            "name": "business_info3",
+                            "fields": [{
+                                "name": "user_id",
+                                "type": ["null","string"],
+                                "default":null
+                            }, {
+                                "name": "extentions",
+                                "type": ["null",{
+                                    "type": "map",
+                                    "values": "string"
+                                }],
+                                "default":null
+                            }]
+                        }],
+                        "default":null
+                    }, {
+                        "name": "page_info",
+                        "type": ["null",{
+                            "type": "record",
+                            "name": "page_info_record3",
+                            "fields": [{
+                                "name": "current_page_id",
+                                    "type": ["null","string"],
+                                    "default":null
+                                }, {
+                                    "name": "current_page_name",
+                                    "type": ["null","string"],
+                                    "default":null
+                                }, {
+                                    "name": "current_page_url",
+                                    "type": ["null","string"],
+                                    "default":null
+                                }, {
+                                    "name": "current_page_host",
+                                    "type": ["null","string"],
+                                    "default":null
+                                }, {
+                                    "name": "current_page_query",
+                                    "type": ["null","string"],
+                                    "default":null
+                                }, {
+                                    "name": "current_page_path",
+                                    "type": "string"
+                                }, {
+                                    "name": "source_page_id",
+                                    "type": ["null","string"],
+                                    "default":null
+                                }, {
+                                    "name": "source_page_name",
+                                    "type": ["null","string"],
+                                    "default":null
+                                }, {
+                                    "name": "source_page_url",
+                                    "type": ["null","string"],
+                                    "default":null
+                                }, {
+                                    "name": "source_page_host",
+                                   "type": ["null","string"],
+                                    "default":null
+                                }, {
+                                    "name": "source_page_query",
+                                    "type": ["null","string"],
+                                    "default":null
+                                }, {
+                                    "name": "source_page_path",
+                                    "type": "string"
+                                }]
+                        }],
+                        "default":null
+                    }, {
+                        "name": "event_code_md5",
+                        "type": ["null","string"],
+                        "default":null
+                    }]
+                }, {
+                    "name": "cold_start",
+                    "type": "record",
+                    "fields": [{
+                        "name": "cold_start",
+                        "type": "string"
+                    }, {
+                        "name": "event_code",
+                        "type": "string"
+                    }, {
+                        "name": "event_name",
+                        "type": "string"
+                    }, {
+                        "name": "event_type",
+                        "type": "string"
+                    }, {
+                        "name": "send_type",
+                        "type": "string"
+                    }, {
+                        "name": "page_type",
+                        "type": "string"
+                    }, {
+                        "name": "ts",
+                        "type": "string"
+                    }, {
+                        "name": "network_type",
+                        "type": "string"
+                    },{
+                        "name": "location_info",
+                        "type": {
+                            "type": "record",
+                            "name": "location_info_record3",
+                            "fields": [{
+                                "name": "ip",
+                                "type": "string"
+                            }]
+                        }
+                    },{
+                        "name": "business_info",
+                        "type": ["null",{
+                            "type": "record",
+                            "name": "business_info4",
+                            "fields": [{
+                                "name": "user_id",
+                                "type": ["null","string"],
+                                "default":null
+                            }, {
+                                "name": "extentions",
+                                "type": ["null",{
+                                    "type": "map",
+                                    "values": "string"
+                                }],
+                                "default":null
+                            }]
+                        }],
+                        "default":null
+                    }]
+                    
+                }, {
+                    "name": "hot_start",
+                    "type": "record",
+                    "fields": [{
+                        "name": "event_code",
+                        "type": "string"
+                    }, {
+                        "name": "event_name",
+                        "type": "string"
+                    }, {
+                        "name": "hot_start",
+                        "type": "string"
+                    }, {
+                        "name": "event_type",
+                        "type": "string"
+                    }, {
+                        "name": "send_type",
+                        "type": "string"
+                    }, {
+                        "name": "page_type",
+                        "type": "string"
+                    }, {
+                        "name": "ts",
+                        "type": "string"
+                    }, {
+                        "name": "network_type",
+                        "type": "string"
+                    }, {
+                        "name": "location_info",
+                        "type": {
+                            "type": "record",
+                            "name": "location_info_record2",
+                            "fields": [{
+                                "name": "ip",
+                                "type": "string"
+                            }]
+                        }
+                    },{
+                        "name": "business_info",
+                        "type": ["null",{
+                            "type": "record",
+                            "name": "business_info5",
+                            "fields": [{
+                                "name": "user_id",
+                                "type": ["null","string"],
+                                "default":null
+                            }, {
+                                "name": "extentions",
+                                "type": ["null",{
+                                    "type": "map",
+                                    "values": "string"
+                                }],
+                                "default":null
+                            }]
+                        }],
+                        "default":null
+                    },  {
+                        "name": "event_code_md5",
+                        "type": ["null","string"],
+                        "default":null
+                    }]
+                }, {
+                    "name": "use_end",
+                    "type": "record",
+                    "fields": [{
+                        "name": "use_end",
+                        "type": "string"
+                    },{
+                        "name": "event_code",
+                        "type": "string"
+                    }, {
+                        "name": "event_name",
+                        "type": "string"
+                    }, {
+                        "name": "event_type",
+                        "type": "string"
+                    }, {
+                        "name": "send_type",
+                        "type": "string"
+                    }, {
+                        "name": "page_type",
+                        "type": "string"
+                    }, {
+                        "name": "ts",
+                        "type": "string"
+                    }, {
+                        "name": "network_type",
+                        "type": "string"
+                    }, {
+                        "name": "event_duration",
+                        "type": "string"
+                    },{
+                        "name": "location_info",
+                        "type": {
+                            "type": "record",
+                            "name": "location_info_record4",
+                            "fields": [{
+                                "name": "ip",
+                                "type": "string"
+                            }]
+                        }
+                    },{
+                        "name": "business_info",
+                        "type": ["null",{
+                            "type": "record",
+                            "name": "business_info6",
+                            "fields": [{
+                                "name": "user_id",
+                                "type": ["null","string"],
+                                "default":null
+                            }, {
+                                "name": "extentions",
+                                "type": ["null",{
+                                    "type": "map",
+                                    "values": "string"
+                                }],
+                                "default":null
+                            }]
+                        }],
+                        "default":null
+                    },{
+                        "name": "event_code_md5",
+                        "type": ["null","string"],
+                        "default":null
+                    }]
+                }]
+            }
+        }]
+    }]
+}
