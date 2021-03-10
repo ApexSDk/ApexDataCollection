@@ -1,5 +1,5 @@
 #
-#  Be sure to run `pod spec lint ApexDataCollection.podspec' to ensure this is a
+#  Be sure to run `pod spec lint ApexDataCollection_IOS.podspec' to ensure this is a
 #  valid spec and to remove all comments including this before submitting the spec.
 #
 #  To learn more about Podspec attributes see https://guides.cocoapods.org/syntax/podspec.html
@@ -17,7 +17,7 @@ Pod::Spec.new do |spec|
 
   spec.name         = "ApexDataCollection_IOS"
   spec.version      = "0.0.1"
-  spec.summary      = "ApexDataCollection_IOS"
+  spec.summary      = "A short description of ApexDataCollection_IOS."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -25,7 +25,8 @@ Pod::Spec.new do |spec|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   spec.description  = <<-DESC
-    APEX标准化SDK
+      APEX标准化SDK
+
                    DESC
 
   spec.homepage     = "https://github.com/ApexSDk/ApexDataCollection"
@@ -81,11 +82,10 @@ Pod::Spec.new do |spec|
   #
 
   spec.source       = { :git => "https://github.com/ApexSDk/ApexDataCollection.git", :tag => "#{spec.version}" }
-
   spec.vendored_frameworks = "ApexDataCollection.framework"
   spec.resource_bundles = {'resource'=> ['resource_bundle/*.json'],}
   spec.dependency 'ApexDataCollectUtil', '~> 0.0.1'
-  
+
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  CocoaPods is smart about how it includes source code. For source files
@@ -93,6 +93,7 @@ Pod::Spec.new do |spec|
   #  For header files it will include any header in the folder.
   #  Not including the public_header_files will make all headers public.
   #
+
 
   # spec.public_header_files = "Classes/**/*.h"
 
