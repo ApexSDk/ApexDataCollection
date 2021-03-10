@@ -83,8 +83,9 @@ Pod::Spec.new do |spec|
   spec.source       = { :git => "https://github.com/ApexSDk/ApexDataCollection.git", :tag => "#{spec.version}" }
 
   spec.vendored_frameworks = "ApexDataCollection.framework"
-  resource_bundles = {'resource'=> ['Resources/resource.bundle'],}
-
+  spec.resource_bundles = {'resource'=> ['Resources/resource.bundle'],}
+  spec.dependency 'ApexDataCollectUtil', '~> 0.0.1'
+  
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  CocoaPods is smart about how it includes source code. For source files
