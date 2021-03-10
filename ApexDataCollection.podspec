@@ -82,7 +82,7 @@ Pod::Spec.new do |spec|
 
   spec.source       = { :git => "https://github.com/ApexSDk/ApexDataCollection.git", :tag => "#{spec.version}" }
 
-  spec.vendored_frameworks = "AppVest.framework"
+  spec.vendored_frameworks = "ApexDataCollection.framework"
   resource_bundles = {'resource'=> ['Resources/resource.bundle'],}
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
